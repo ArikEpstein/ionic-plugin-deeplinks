@@ -1,3 +1,5 @@
+window['dl'] = '';
+
 var argscheck = require('cordova/argscheck'),
   utils = require('cordova/utils'),
   exec = require('cordova/exec');
@@ -39,6 +41,8 @@ var IonicDeeplink = {
     this.paths = paths;
 
     this.onDeepLink(function (data) {
+      window['dl'] = data;
+
       console.log('[Deep Link Data]', data);
 
       console.log('[Deep Link Error]', error);
